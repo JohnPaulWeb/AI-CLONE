@@ -2,6 +2,8 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Search } from "lucide-react";
 
 
 
@@ -43,10 +45,28 @@ export default function Home() {
 
               {/* This is motion */}
 
+              <motion.div whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}>
+
+              <Button variant="ghost" size="icon">
+                <Search className="w-5 h-5" />
+              </Button>
+
+              </motion.div>
               
             </div>
           </div>
       </motion.header>
+
+
+      <main className="pt-16"> 
+        <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative h-[80vh]"
+
+      </main>
     </div>
   );
 }
