@@ -3,9 +3,10 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Search } from "lucide-react";
+import { Loader2, Search } from "lucide-react";
 import { Suspense } from "react";
 import ProductsSection from "./components/ProductsSection";
+import DeveloperSection from "./components/DeveloperSection";
 
 
 
@@ -45,7 +46,7 @@ export default function Home() {
 
 
       <main className="pt-16">
-        <section className="relative h-[80vh] flex items-center justify-center bg-gradient-to-br from-blue-600 to to-blue-400 animate-fadeIn">
+        <section className="relative h-[80vh] flex items-center justify-center bg-gradient-to-br from-pink-600 to to-pink-400 animate-fadeIn">
           <div className="text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold animate-scaleIn"> Ayanokoji Kiyotaka</h1>
             <p className="text-lg md:text-xl text-gray-300 animate-slideUp"> The Tech is evolving that's why we need to go </p>
@@ -59,8 +60,18 @@ export default function Home() {
           <ProductsSection />
         </Suspense>
 
-
+        <Suspense fallback={<LoadingSection />}>
+          <DeveloperSection />
+        </Suspense>
       </main>
     </div>
   );
+}
+
+function LoadingSection() {
+  return (
+    <div className="flex items-center justify-center py-20">
+      <Loader2 className="w-8 h-8 animate-spin" />
+    </div>
+  )
 }

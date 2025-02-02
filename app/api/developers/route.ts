@@ -5,23 +5,23 @@ export async function GET() {
     const articles = [
         {
             id: 1,
-            title: "",
+            title: "OPEN AI",
             date: "",
-            gradient: "",
-            category: "",
+            gradient: "from-yellow-300 to-blue-300",
+            category: "Product",
         },
         {
             id: 2,
-            title: "",
+            title: "DEEP SEEK",
             date: "",
-            gradient: "",
+            gradient: "from-orange-400 to-orange-300",
             category: "",
         },
         {
-        id: 1,
-        title: "",
+        id: 3,
+        title: "PERPLEXITY AI",
         date: "",
-        gradient: "",
+        gradient: "from-blue-300 to-blue-400",
         category: "",
         },
     ]
